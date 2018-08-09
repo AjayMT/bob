@@ -7,7 +7,7 @@ let rl = readline.createInterface({
   output: process.stdout
 })
 
-let dataFile = process.argv[2] || './data.json'
+let dataFile = process.argv[2] || `${__dirname}/data.json`
 let data = JSON.parse(fs.readFileSync(dataFile, 'utf8'))
 let names = Object.keys(Object.values(data)[0])
 let filtered = copy(names)
