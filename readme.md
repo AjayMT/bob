@@ -12,35 +12,35 @@ bob is an [akinator](http://akinator.com) inspired binary tree navigator.
 bob asks questions contained in `data-file` until it reaches an endpoint.
 
     $ node bob/index.js
-	Is your character alive? (y/n) y
+    Is your character alive? (y/n) y
     Is your character real? (y/n)
-	...
-	Is your character the founder of PayPal? (y/n) y
-	Elon Musk
-	Correct? (y/n) y
+    ...
+    Is your character the founder of PayPal? (y/n) y
+    Elon Musk
+    Correct? (y/n) y
 
 If bob does not reach a single endpoint, or if it is incorrect, bob will prompt the user to append to the dataset.
 
     ...
     Is your character the founder of PayPal? (y/n) y
-	Elon Musk
-	Correct? (y/n) n
-	Name: Peter Thiel
-	Question (optional):
-	Answer (y/n):
+    Elon Musk
+    Correct? (y/n) n
+    Name: Peter Thiel
+    Question (optional):
+    Answer (y/n):
 
     ...
-	Is your character the founder of PayPal? (y/n) y
-	ERROR Peter Thiel, Elon Musk are identical
-	Question: Is your character the founder of Tesla?
-	Answer for Peter Thiel (y/n): n
+    Is your character the founder of PayPal? (y/n) y
+    ERROR Peter Thiel, Elon Musk are identical
+    Question: Is your character the founder of Tesla?
+    Answer for Peter Thiel (y/n): n
 
     ...
     Is your character the founder of PayPal? (y/n) n
-	ERROR none found
-	Name: Jeff Bezos
-	Question (optional):
-	Answer (y/n):
+    ERROR none found
+    Name: Jeff Bezos
+    Question (optional):
+    Answer (y/n):
 
 If the name or question entered already exist in the dataset, bob will overwrite existing data.
 
@@ -52,16 +52,14 @@ The format in which binary tree data is stored is as follows.
 {
   "Is your character the founder of PayPal?": {
     "Elon Musk": true,
-	"Peter Thiel": true,
-	"Jeff Bezos": false,
-	...
+     "Peter Thiel": true,
+     "Jeff Bezos": false
   },
   "Is your character the founder of Tesla?": {
     "Elon Musk": true,
-	"Peter Thiel": false,
-	"Jeff Bezos": false
-  },
-  ...
+    "Peter Thiel": false,
+    "Jeff Bezos": false
+  }
 }
 ```
 
