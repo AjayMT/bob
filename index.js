@@ -29,14 +29,14 @@ function filter (question, response) {
     filtered.splice(filtered.indexOf(removed[i]), 1)
 
   if (filtered.length > 1 && questions.length === 0) {
-    console.log('ERR ' + filtered.join(' ') + ' are identical')
+    console.log('ERROR ' + filtered.join(', ') + ' are identical')
     differentiate()
     return
   }
 
   if (filtered.length > 1) ask()
   else if (filtered.length === 0) {
-    console.log('ERR none found')
+    console.log('ERROR none found')
     append()
   } else end()
 }
@@ -63,7 +63,7 @@ function popQuestion () {
 function ask () {
   let q = popQuestion()
 
-  rl.question(q + ' ', (answer) => {
+  rl.question(q + ' (y/n) ', (answer) => {
     answer = answer === 'y'
     insertion[q] = answer
     filter(q, answer)
@@ -73,7 +73,7 @@ function ask () {
 function end () {
   console.log(filtered[0])
 
-  rl.question('Correct? ', (answer) => {
+  rl.question('Correct? (y/n) ', (answer) => {
     if (answer === 'y') rl.close()
     else append()
   })
@@ -81,7 +81,7 @@ function end () {
 
 function differentiate () {
   rl.question('Question: ', (question) => {
-    rl.question('Answer for ' + filtered[0] + ': ', (answer) => {
+    rl.question('Answer for ' + filtered[0] + ' (y/n): ', (answer) => {
       answer = answer === 'y'
 
       if (!(question in data)) {
@@ -109,8 +109,8 @@ function append () {
         data[q][name] = insertion[q] === undefined ? data[q][name] : insertion[q]
     }
 
-    rl.question('Question: ', (question) => {
-      rl.question('Answer: ', (answer) => {
+    rl.question('Question (optional): ', (question) => {
+      rl.question('Answer (y/n): ', (answer) => {
         answer = answer === 'y'
 
         if (!(question in data) && question) {
