@@ -52,8 +52,8 @@ The format in which binary tree data is stored is as follows.
 {
   "Is your character the founder of PayPal?": {
     "Elon Musk": true,
-     "Peter Thiel": true,
-     "Jeff Bezos": false
+    "Peter Thiel": true,
+    "Jeff Bezos": false
   },
   "Is your character the founder of Tesla?": {
     "Elon Musk": true,
