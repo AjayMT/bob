@@ -13,7 +13,7 @@ bob asks questions contained in `data-file` until it reaches an endpoint.
 
     $ node bob/index.js
     Is your character alive? (y/n) y
-    Is your character real? (y/n)
+    Is your character real? (y/n) y
     ...
     Is your character the founder of PayPal? (y/n) y
     Elon Musk
@@ -42,7 +42,7 @@ If bob does not reach a single endpoint, or if it is incorrect, bob will prompt 
     Question (optional):
     Answer (y/n):
 
-If the name or question entered already exist in the dataset, bob will overwrite existing data.
+If the name or question entered already exists in the dataset, bob will overwrite existing data.
 
 ## `data-file` format
 
